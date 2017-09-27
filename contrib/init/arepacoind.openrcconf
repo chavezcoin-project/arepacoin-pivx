@@ -1,0 +1,26 @@
+# /etc/conf.d/arepacoind: config file for /etc/init.d/arepacoind
+
+# Config file location
+#BITCOIND_CONFIGFILE="/etc/arepacoin/arepacoin.conf"
+
+# What directory to write pidfile to?  (created and owned by $BITCOIND_USER)
+#BITCOIND_PIDDIR="/var/run/arepacoind"
+
+# What filename to give the pidfile
+#BITCOIND_PIDFILE="${BITCOIND_PIDDIR}/arepacoind.pid"
+
+# Where to write arepacoind data (be mindful that the blockchain is large)
+#BITCOIND_DATADIR="/var/lib/arepacoind"
+
+# User and group to own arepacoind process
+#BITCOIND_USER="arepacoin"
+#BITCOIND_GROUP="arepacoin"
+
+# Path to arepacoind executable
+#BITCOIND_BIN="/usr/bin/arepacoind"
+
+# Nice value to run arepacoind under
+#BITCOIND_NICE=0
+
+# Additional options (avoid -conf and -datadir, use flags above)
+BITCOIND_OPTS=""
