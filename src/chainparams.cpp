@@ -231,18 +231,18 @@ public:
         nMaxMoneyOut = 43199500 * COIN;
 
         //! Modify the testnet genesis block so the timestamp is valid for a later start.
-        genesis.nTime = 1454124731;
-        genesis.nNonce = 2402015;
+        genesis.nTime = 1494124731;
+        genesis.nNonce = 1345259;
 
-        // hashGenesisBlock = genesis.GetHash();
-        // assert(hashGenesisBlock == uint256("0x0000041e482b9b9691d98eefb48473405c0b8ec31b76df3797c74a78680ef818"));
+        // MineGenesis(genesis, bnProofOfWorkLimit);
+
+        hashGenesisBlock = genesis.GetHash();
+        assert(hashGenesisBlock == uint256("0x000000011be9d3a79c82513bf639f0fa9c7463c5eac72d99405a84e36d3a7dd6"));
 
         vFixedSeeds.clear();
         vSeeds.clear();
-        vSeeds.push_back(CDNSSeedData("fuzzbawls.pw", "arepacoin-testnet.seed.fuzzbawls.pw"));
-        vSeeds.push_back(CDNSSeedData("fuzzbawls.pw", "arepacoin-testnet.seed2.fuzzbawls.pw"));
-        vSeeds.push_back(CDNSSeedData("s3v3nh4cks.ddns.net", "s3v3nh4cks.ddns.net"));
-        vSeeds.push_back(CDNSSeedData("88.198.192.110", "88.198.192.110"));
+        // vSeeds.push_back(CDNSSeedData("fuzzbawls.pw", "arepacoin-testnet.seed.fuzzbawls.pw"));
+        // vSeeds.push_back(CDNSSeedData("fuzzbawls.pw", "arepacoin-testnet.seed2.fuzzbawls.pw"));
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 139); // Testnet arepacoin addresses start with 'x' or 'y'
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 19);  // Testnet arepacoin script addresses start with '8' or '9'
@@ -301,11 +301,13 @@ public:
         bnProofOfWorkLimit = ~uint256(0) >> 1;
         genesis.nTime = 1454124731;
         genesis.nBits = 0x207fffff;
-        genesis.nNonce = 12345;
+        genesis.nNonce = 12347;
 
-        // hashGenesisBlock = genesis.GetHash();
-        // nDefaultPort = 51476;
-        // assert(hashGenesisBlock == uint256("0x4f023a2120d9127b21bbad01724fdb79b519f593f2a85b60d3d79160ec5f29df"));
+        // MineGenesis(genesis, bnProofOfWorkLimit);
+
+        hashGenesisBlock = genesis.GetHash();
+        nDefaultPort = 51476;
+        assert(hashGenesisBlock == uint256("0x21b573c4d521c602e58b41e5bf26fa55721b0f9c9c797539055ffcca69a89921"));
 
         vFixedSeeds.clear(); //! Testnet mode doesn't have any fixed seeds.
         vSeeds.clear();      //! Testnet mode doesn't have any DNS seeds.
